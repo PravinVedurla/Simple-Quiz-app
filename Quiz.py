@@ -22,10 +22,13 @@ class Quiz:
 		print(self.name + ", Are you ready for a round of 10 questions?")
 		t1 = input("Y/N? : ")
 		if (t1 == 'y' or t1 == 'Y'):
-			for (a,i) in zip(range(3), self.nums):
+			for (a,i) in zip(range(10), self.nums):
 			#	for i in range(self.nums):
 					print(self.df['QUESTIONS'][i:i+1].values)
-					print("(1)" + self.df['OPTION 1'][i:i+1] + " (2)" + self.df['OPTION 2'][i:i+1] + " (3)" + self.df['OPTION 3'][i:i+1] + " (4)" + self.df['OPTION 4'][i:i+1])
+					print("(1)" + self.df['OPTION 1'][i:i+1].values) 
+					print("(2)" + self.df['OPTION 2'][i:i+1].values)
+					print("(3)" + self.df['OPTION 3'][i:i+1].values)
+					print("(4)" + self.df['OPTION 4'][i:i+1].values)
 					t2 = float(input("Enter your option (0-4): "))
 
 					if (t2 == self.df['ANSWER'][i:i+1].values):
@@ -39,6 +42,7 @@ class Quiz:
 					    continue
 					else:
 					    break
+			print("You've made it through! Your score is " + str(self.score))
 
 
 
